@@ -1,0 +1,10 @@
+# Two-class bird detector: brownbird=0, whitebird=1
+# Must match tiles_640/classes.txt line order and label file class ids.
+path: dataset
+train: images/train
+val: images/val
+
+nc: 2
+names:
+  0: brownbird
+  1: whitebird

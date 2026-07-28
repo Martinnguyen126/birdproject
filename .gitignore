@@ -1,0 +1,52 @@
+# --- Huge data / outputs (too large for GitHub) ---
+tiles_selected_30m/
+tiles_quick_test/
+tiles_640/
+tiles_155/
+tiles_640_155/
+tiles_640_test/
+selected_images_30m/
+annotated_tiles_with_coords/
+HI_052426/
+runs/
+dataset/images/
+dataset/labels/
+*.cache
+
+# Model weights (large binaries)
+*.pt
+*.pth
+*.onnx
+
+# Images (training tiles + exports). Keep code/configs only.
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.png
+*.PNG
+*.tif
+*.tiff
+
+# Allow small text configs / labels docs if needed later
+!**/classes.txt
+
+# --- Python / Jupyter ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large exports
+*.geojson
+bird_detections.csv
+all_drone_gps.csv
+selected_drone_images.csv

@@ -1,0 +1,10 @@
+# YOLO dataset config for whitebird detection
+# Paths are relative to this file's location.
+
+path: dataset
+train: images/train
+val: images/val
+
+nc: 1
+names:
+  0: whitebird
