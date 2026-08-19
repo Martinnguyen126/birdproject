@@ -22,11 +22,17 @@ def main() -> None:
         print("classes.txt OK:", lines)
 
     tiles = 0
+    backgrounds = 0
+    unlabeled = 0
     c0 = c1 = 0
     both = 0
     for img in sorted(TILES_DIR.glob("*.jpg")):
         lbl = img.with_suffix(".txt")
-        if not lbl.exists() or lbl.stat().st_size == 0:
+        if not lbl.exists():
+            unlabeled += 1
+            continue
+        if lbl.stat().st_size == 0:
+            backgrounds += 1
             continue
         tiles += 1
         ids = set()
@@ -41,7 +47,9 @@ def main() -> None:
         if "0" in ids and "1" in ids:
             both += 1
 
-    print(f"Labeled tiles: {tiles}")
+    print(f"Labeled tiles (birds): {tiles}")
+    print(f"Background tiles (empty .txt): {backgrounds}")
+    print(f"Unlabeled jpgs (no .txt): {unlabeled}")
     print(f"Class 0 (brownbird) boxes: {c0}")
     print(f"Class 1 (whitebird) boxes: {c1}")
     print(f"Tiles with BOTH classes: {both}")
